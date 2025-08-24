@@ -1,1 +1,1 @@
-# hypersplit
+# HyperSplit Documentation
