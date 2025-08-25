@@ -134,14 +134,19 @@ The state machine operates through these stages:
 
 At launch, only ETH on-ramp is supported, so gas fees are automatically deducted from the swap. For future ERC-20 support, we may need to pre-fund gas by deploying a contract on HyperEVM to receive the ERC-20, deduct gas fees, and then send USDT to the user. This enhancement is planned for later.
 
-## Authentication
 
-We use Privy to manage the user resource. Users log in via SMS OTP and are then added as a user resource in Privy. Then, we generate an embedded Ethereum wallet that the user will use to transact.
+## Hyperliquid Hackathon Categories
 
-The backend has its own representation of users that are linked via external ID pointing to the authenticated Privy user.
-
-To authenticate and authorize requests to the BE, the frontend will include a Privy JWT identity token in the request. The BE will then use those
-tokens against a privy REST API for getting the user's information, such as phone number and external ID. Docs can be found [here](https://docs.privy.io/user-management/users/identity-tokens).
+- **Hyperliquid Frontier Track**
+  - HyperSplit mobile app is solving a real problem - instant expense splitting.
+- **Best use of Privy**
+  - We use Privy to manage the user resource. Users log in via SMS OTP and are then added as a user resource in Privy. Then, we generate an embedded Ethereum wallet that the user will use to transact.
+- **Best use of LiFi**
+  - We use LiFi for on/off ramp from crypto: swap ETH to USDT on Hyperliquid
+- **Best use of Alchemy**
+  - We use Alchemy to get the balance of the user's wallet as well as RPC capabilities across EVMs.
+- **Best showcase of identity with Hyperliquid names .hl**
+  - For finding their friends, users can use their .hl name instead of their wallet address. There is a UX to purchase a name and assign it to their Privy account.
 
 ## Getting Started
 
