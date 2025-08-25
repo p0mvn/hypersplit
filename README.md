@@ -138,15 +138,15 @@ At launch, only ETH on-ramp is supported, so gas fees are automatically deducted
 ## Hyperliquid Hackathon Categories
 
 - **Hyperliquid Frontier Track**
-  - HyperSplit mobile app is solving a real problem - instant expense splitting.
+  - HyperSplit mobile app is solving a real problem - instant expense splitting and permissionless onboarding - no KYC, no bank account required.
 - **Best use of Privy**
-  - We use Privy to manage the user resource. Users log in via SMS OTP and are then added as a user resource in Privy. Then, we generate an embedded Ethereum wallet that the user will use to transact.
+  - We use Privy to manage the user resource. Users log in via SMS OTP and are then added as a user resource in Privy. Then, we generate an embedded Ethereum wallet that the user will use to transact. With Privy, we are able to completely abstract signatures away from the user, offerring a seamless experience focused on the key value of instant expense splitting.
 - **Best use of LiFi**
-  - We use LiFi for on/off ramp from crypto: swap ETH to USDT on Hyperliquid
+  - LiFi is our on/off ramp solution from anywhere on crypto. We have built a custom service and a state-machine, that watches user addresses on selected chains. Once a balance update is detected, the funds are swapped to USDT on Hyperliquid to enable them to participate in the app. The routing is completely abstracted from the user, and they are not aware of the underlying mechanics.
 - **Best use of Alchemy**
-  - We use Alchemy to get the balance of the user's wallet as well as RPC capabilities across EVMs.
+  - We use Alchemy to get the balance of the user's wallet as well as RPC capabilities across EVMs. Alchemy is a great choice for this use case because it provides a reliable and scalable way to interact with Ethereum-based blockchains.
 - **Best showcase of identity with Hyperliquid names .hl**
-  - For finding their friends, users can use their .hl name instead of their wallet address. There is a UX to purchase a name and assign it to their Privy account.
+  - For finding their friends, users can use their .hl name instead of their wallet address. Users can search for their friends by name, and the app will show them in the list of friends. There is a UX to purchase a name and assign it to their Privy account.
 
 ## Getting Started
 
