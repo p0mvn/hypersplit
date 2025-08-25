@@ -1,563 +1,637 @@
 <title>Documentation</title>
     
-    <!-- Primary SVG Favicon (works in modern browsers) -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 128 128'%3E%3Cdefs%3E%3ClinearGradient id='grad' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%2362D5C8'/%3E%3Cstop offset='50%25' style='stop-color:%233BC9C3'/%3E%3Cstop offset='100%25' style='stop-color:%2318A89E'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='128' height='128' rx='20' fill='%23194D4A'/%3E%3Cpath d='M 30 35 L 30 93 L 50 93 L 50 65 L 70 65 L 70 45 L 50 45 L 50 35 Z M 78 35 L 78 55 Q 78 65 88 65 L 98 65 Q 98 75 88 75 L 78 75 L 78 93 L 88 93 Q 108 93 108 75 L 108 55 Q 108 35 88 35 Z M 88 45 L 98 45 L 98 55 L 88 55 Q 88 45 88 45 Z' fill='url(%23grad)'/%3E%3C/svg%3E">
+<!-- Primary SVG Favicon (works in modern browsers) -->
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 128 128'%3E%3Cdefs%3E%3ClinearGradient id='grad' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%2362D5C8'/%3E%3Cstop offset='50%25' style='stop-color:%233BC9C3'/%3E%3Cstop offset='100%25' style='stop-color:%2318A89E'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='128' height='128' rx='20' fill='%23194D4A'/%3E%3Cpath d='M 30 35 L 30 93 L 50 93 L 50 65 L 70 65 L 70 45 L 50 45 L 50 35 Z M 78 35 L 78 55 Q 78 65 88 65 L 98 65 Q 98 75 88 75 L 78 75 L 78 93 L 88 93 Q 108 93 108 75 L 108 55 Q 108 35 88 35 Z M 88 45 L 98 45 L 98 55 L 88 55 Q 88 45 88 45 Z' fill='url(%23grad)'/%3E%3C/svg%3E">
 
-    <!-- Alternative simplified SVG for smaller sizes -->
-    <link rel="alternate icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23194D4A'/%3E%3Cpath d='M 7 8 L 7 24 L 12 24 L 12 17 L 17 17 L 17 12 L 12 12 L 12 8 Z M 19 8 L 19 14 Q 19 17 22 17 L 25 17 Q 25 20 22 20 L 19 20 L 19 24 L 22 24 Q 28 24 28 20 L 28 14 Q 28 8 22 8 Z M 22 12 L 25 12 L 25 14 L 22 14 Z' fill='%233BC9C3'/%3E%3C/svg%3E">
+<!-- Alternative simplified SVG for smaller sizes -->
+<link rel="alternate icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23194D4A'/%3E%3Cpath d='M 7 8 L 7 24 L 12 24 L 12 17 L 17 17 L 17 12 L 12 12 L 12 8 Z M 19 8 L 19 14 Q 19 17 22 17 L 25 17 Q 25 20 22 20 L 19 20 L 19 24 L 22 24 Q 28 24 28 20 L 28 14 Q 28 8 22 8 Z M 22 12 L 25 12 L 25 14 L 22 14 Z' fill='%233BC9C3'/%3E%3C/svg%3E">
 
-    <!-- PNG Favicon for older browsers (16x16) -->
-    <link rel="icon" type="image/png" sizes="16x16" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAAsTAAALEwEAmpwYAAABaElEQVQ4jZWTsUsDQRCFv9m9u71LYhJNFBVBEQRBEATBQrCwsLCwsLDwP1jYWVlYWFhYWFgIFoKFhYWFIAiCIAii+INE0+Tuzs5YJLm73F0uPhhmZ9/73szsLCilmE8I5szfAJaZQvQdYPsGcCqV8hwHy7IIh8P4/X6EEDiOg67rSCkXBQCYm5vDdV2klEQiEQzD4Pn5mevra05PT3l6elIAlmVhGAb5fJ5kMomUEsMwqFQq3N3dcXBwQKlUUgCO42DbNtFoFCEErusSCoXo6enhUClVBxzHwbZtotEomqYhhKBYLHL8AJ+2bVMsFgmHw2iaRj6fp1AocAHwBCCl5Obm5p8DnwBSSorFIplMBinlrwBN08hms9ze3jYH6JpWq9Uol8u0t7c3B/B5d3V1Ua1WmwP4fL6mACCwbRtd1xsD6Lre1IEOBIPBBqZeMwQQCARaDlBffQ0FKJVKLQf8AvCK5xO8AKO5E7uTQdpJAAAAAElFTkSuQmCC">
+<!-- PNG Favicon for older browsers (16x16) -->
+<link rel="icon" type="image/png" sizes="16x16" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAAsTAAALEwEAmpwYAAABaElEQVQ4jZWTsUsDQRCFv9m9u71LYhJNFBVBEQRBEATBQrCwsLCwsLDwP1jYWVlYWFhYWFgIFoKFhYWFIAiCIAii+INE0+Tuzs5YJLm73F0uPhhmZ9/73szsLCilmE8I5szfAJaZQvQdYPsGcCqV8hwHy7IIh8P4/X6EEDiOg67rSCkXBQCYm5vDdV2klEQiEQzD4Pn5mevra05PT3l6elIAlmVhGAb5fJ5kMomUEsMwqFQq3N3dcXBwQKlUUgCO42DbNtFoFCEErusSCoXo6enhUClVBxzHwbZtotEomqYhhKBYLHL8AJ+2bVMsFgmHw2iaRj6fp1AocAHwBCCl5Obm5p8DnwBSSorFIplMBinlrwBN08hms9ze3jYH6JpWq9Uol8u0t7c3B/B5d3V1Ua1WmwP4fL6mACCwbRtd1xsD6Lre1IEOBIPBBqZeMwQQCARaDlBffQ0FKJVKLQf8AvCK5xO8AKO5E7uTQdpJAAAAAElFTkSuQmCC">
 
-    <!-- PNG Favicon for standard size (32x32) -->
-    <link rel="icon" type="image/png" sizes="32x32" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAAsTAAALEwEAmpwYAAACMklEQVRYhe2XP2gTURzHP+/d5S5pktZqq1UUFUEQBEEQBMFBcHBwcHBwcHD0H7i4uTk4ODg4ODgILg4ODg6CIAiCIIgiKFWxtmma5nKXu3vvOVySS3KXS9PUDn6He+/3+/2+v/fe7/d7DyRJYjNDYhNzF4DdIwhxCNi3CfiUSl25HJZlEY1G8fl8CCHQNA1VVZFSrgtg27bdbVFK9Xg/lUqRSqW4vr5mampKBmCIjo4OLMsiHA4jhEBKied53N7ecnJyQj6fl8FVrNVqRCIRVFXFMAwyMxZSSpRiEa21FZ/Ph+d5SCmRUiKEIBaLcXd3RzweVwCo1+tEIhFkPs8rYFgplVwpJUopIpEIhmHQ19enAFCr1QiFQsiXLywAQ36/v+nBUqnE8PAwmqZJAGq1GsFgEPn8zAIw1NLS0hLgui4XFxc4jiMDME0Tf3Mz8uGBBWCora2tJaBQKHB0dIRpmjIA0zTxaTry/p4FYKC1tVUG4HkeZ2dnuK4rAzBNE00I5O0tC8BAa2tLI8DzvLKD4+NjHMeRAZimia4oyKkpFoCBtrbWRkCtVmN8fBzXdWUApmmiSYmcnGQBGGhra2sEuK7L6Ogoj4+PMgDTNNGEQN7csAAMtHd0NAJc12VkZITJyUkZgGmaaADy6ooFYKCjo6MRUOv/Ax0dnQ0nWfW/0BPQ2toKwBXgQ1FwVlBhGRRFaYiXLgGVnZ2duJVKn3JFEPh8vqb4fx/Tr8BHYCvgbbYa/zv8AObQkdJj8bILAAAAAElFTkSuQmCC">
+<!-- PNG Favicon for standard size (32x32) -->
+<link rel="icon" type="image/png" sizes="32x32" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAAsTAAALEwEAmpwYAAACMklEQVRYhe2XP2gTURzHP+/d5S5pktZqq1UUFUEQBEEQBMFBcHBwcHBwcHD0H7i4uTk4ODg4ODgILg4ODg6CIAiCIIgiKFWxtmma5nKXu3vvOVySS3KXS9PUDn6He+/3+/2+v/fe7/d7DyRJYjNDYhNzF4DdIwhxCNi3CfiUSl25HJZlEY1G8fl8CCHQNA1VVZFSrgtg27bdbVFK9Xg/lUqRSqW4vr5mampKBmCIjo4OLMsiHA4jhEBKied53N7ecnJyQj6fl8FVrNVqRCIRVFXFMAwyMxZSSpRiEa21FZ/Ph+d5SCmRUiKEIBaLcXd3RzweVwCo1+tEIhFkPs8rYFgplVwpJUopIpEIhmHQ19enAFCr1QiFQsiXLywAQ36/v+nBUqnE8PAwmqZJAGq1GsFgEPn8zAIw1NLS0hLgui4XFxc4jiMDME0Tf3Mz8uGBBWCora2tJaBQKHB0dIRpmjIA0zTxaTry/p4FYKC1tVUG4HkeZ2dnuK4rAzBNE00I5O0tC8BAa2tLI8DzvLKD4+NjHMeRAZimia4oyKkpFoCBtrbWRkCtVmN8fBzXdWUApmmiSYmcnGQBGGhra2sEuK7L6Ogoj4+PMgDTNNGEQN7csAAMtHd0NAJc12VkZITJyUkZgGmaaADy6ooFYKCjo6MRUOv/Ax0dnQ0nWfW/0BPQ2toKwBXgQ1FwVlBhGRRFaYiXLgGVnZ2duJVKn3JFEPh8vqb4fx/Tr8BHYCvgbbYa/zv8AObQkdJj8bILAAAAAElFTkSuQmCC">
 
-    <!-- Apple Touch Icon -->
-    <link rel="apple-touch-icon" sizes="180x180" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAYAAAA9zQYyAAAACXBIWXMAAAsTAAALEwEAmpwYAAAJkklEQVR4nO3de4xc5X3G8e/vzOzs7Hrt9QUbG2OMwQZCuIRLQgihpKFNmiZN0jRt0qZJm6ZN0zRN06Zp0jRN0zRN0zRN0zRN0zRN06Zp0jRN0zRNkyZNSEIIIYQQQgghXAzYGGPwZX3Z3Z2dmXP6x8zszuzO7MzuzJz3fc/5faRH9nq9O3PmnWfPnPN7z3lBRERERERERERERERERERERERERERERERERERERGQlTNILICJxUkOLhEQNLRISNbRISNTQIiFRQ4uERA0tEhI1tEhI1NAiIVFDi4REDS0SEjW0SEjU0CIhUUOLhEQNLRISNbRISNTQIiFRQ4uERA0tEhI1tEhI1NAiIVFDi4REDS0SEjW0SEjU0CIhUUOLhEQNLRISNbRISNTQIiFRQ4uERA0tEhI1tEhINNBp3a1JRERERERERERERERERERERERERERERERERERE/GDLPbmebnJ4Gcyy1x9Fb+Y9bEu+npWqeb1CyWdaQgfK65Fc3vJT/5W9ttqWcsNqoX0jm80yNjZGJpMhm82STqfRUha/Wdcc7e3tzM7O0tPTw759+xgaGmJ4eJjx8XGKxWLSiyeSKh0dHeTzeWZnZ+np6eHAgQMcP36ckydPcu7cOaampiiVSliWRb8XWXsrqpxOp+nu7mbTpk1s3bqVHTt2sGvXLq6//npuuOEGrr32Wnbv3s2OHTvYunUrGzduZGBggK6uLrLZLMYYjJH9X8QfK24pk8mQzWbp7u5mYGCAwcFBdu7cyY4dO9i1axe7d+/m6quv5uqrr2b37t3s3LmTbdu2MTQ0xPr16+np6aGjo4N0Oo0x6mzxX6xbhkml0nR0dNDZ2UlfXx+Dg4MMDw+zdetWtm/fzrZt29i+fTsjIyMMDw+zYcMG+vv76erqoquri1QqVX0NbY0iSUhsLU+n02SzWbq7u+nr62Pjxo0MDQ2xefNmhoaGGB4eZmhoiOHhYYaGhti4cSN9fX10d3eTzWZJp9NJL76IU6nqB+ZyOXp7exkYGGBwcJDBwUEGBwcZGBigv7+fvr4+ent76erqIpvNqotFUqNtW1AmkyGXy9HT00N/fz8bNmyofKv39/fT19dHb28vuVyOTCbTroWQQGm9S2xSqRTt7e10dnbS29vL+vXr6e/vZ/369fT29tLV1UV7e7uOgktqqKFFQqKGFgmJGlokJGpokZCooUVCoob22OT0NM+fPcfI6HjSiyIxUkN77MzkFP+x/yn+8XvfT3pRJEZqaM/V3u/lCdNFo6n5D9TQnltQ0GpoSRgqe6CHlDCpoT<!DOCTYPE html>
+<!-- Apple Touch Icon -->
+<link rel="apple-touch-icon" sizes="180x180" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAYAAAA9zQYyAAAACXBIWXMAAAsTAAALEwEAmpwYAAAJkklEQVR4nO3de4xc5X3G8e/vzOzs7Hrt9QUbG2OMwQZCuIRLQgihpKFNmiZN0jRt0qZJm6ZN0zRN06Zp0jRN0zRN0zRN0zRN0zRN06Zp0jRN0zRNkyZNSEIIIYQQQgghXAzYGGPwZX3Z3Z2dmXP6x8zszuzO7MzuzJz3fc/5faRH9nq9O3PmnWfPnPN7z3lBRERERERERERERERERERERERERERERERERERERGQlTNILICJxUkOLhEQNLRISNbRISNTQIiFRQ4uERA0tEhI1tEhI1NAiIVFDi4REDS0SEjW0SEjU0CIhUUOLhEQNLRISNbRISNTQIiFRQ4uERA0tEhI1tEhI1NAiIVFDi4REDS0SEjW0SEjU0CIhUUOLhEQNLRISNbRISNTQIiFRQ4uERA0tEhI1tEhINNBp3a1JRERERERERERERERERERERERERERERERERERE/GDLPbmebnJ4Gcyy1x9Fb+Y9bEu+npWqeb1CyWdaQgfK65Fc3vJT/5W9ttqWcsNqoX0jm80yNjZGJpMhm82STqfRUha/Wdcc7e3tzM7O0tPTw759+xgaGmJ4eJjx8XGKxWLSiyeSKh0dHeTzeWZnZ+np6eHAgQMcP36ckydPcu7cOaampiiVSliWRb8XWXsrqpxOp+nu7mbTpk1s3bqVHTt2sGvXLq6//npuuOEGrr32Wnbv3s2OHTvYunUrGzduZGBggK6uLrLZLMYYjJH9X8QfK24pk8mQzWbp7u5mYGCAwcFBdu7cyY4dO9i1axe7d+/m6quv5uqrr2b37t3s3LmTbdu2MTQ0xPr16+np6aGjo4N0Oo0x6mzxX6xbhkml0nR0dNDZ2UlfXx+Dg4MMDw+zdetWtm/fzrZt29i+fTsjIyMMDw+zYcMG+vv76erqoquri1QqVX0NbY0iSUhsLU+n02SzWbq7u+nr62Pjxo0MDQ2xefNmhoaGGB4eZmhoiOHhYYaGhti4cSN9fX10d3eTzWZJp9NJL76IU6nqB+ZyOXp7exkYGGBwcJDBwUEGBwcZGBigv7+fvr4+ent76erqIpvNqotFUqNtW1AmkyGXy9HT00N/fz8bNmyofKv39/fT19dHb28vuVyOTCbTroWQQGm9S2xSqRTt7e10dnbS29vL+vXr6e/vZ/369fT29tLV1UV7e7uOgktqqKFFQqKGFgmJGlokJGpokZCooUVCoob22OT0NM+fPcfI6HjSiyIxUkN77MzkFP+x/yn+8XvfT3pRJEZqaM/V3u/lCdNFo6n5D9TQnltQ0GpoSRgqe6CHlDCpoT<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Documentation</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Documentation</title>
+
+<!-- Marked.js for Markdown parsing -->
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+<!-- Prism.js for syntax highlighting -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-javascript.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-bash.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-json.min.js"></script>
+
+<!-- Mermaid.js for diagrams -->
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
     
-    <!-- Marked.js for Markdown parsing -->
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    body {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif;
+        line-height: 1.6;
+        color: #062F31;
+        background: linear-gradient(135deg, #0A4A4D 0%, #0E6B6B 25%, #18A89E 75%, #3BC9C3 100%);
+        min-height: 100vh;
+        padding: 20px;
+        position: relative;
+        overflow-x: hidden;
+    }
     
-    <!-- Prism.js for syntax highlighting -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-javascript.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-bash.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-json.min.js"></script>
+    /* Animated wave background */
+    body::before {
+        content: '';
+        position: fixed;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(ellipse at center, rgba(127, 232, 226, 0.1) 0%, transparent 70%);
+        animation: wave 20s linear infinite;
+        pointer-events: none;
+    }
     
-    <!-- Mermaid.js for diagrams -->
-    <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+    body::after {
+        content: '';
+        position: fixed;
+        top: -50%;
+        right: -50%;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(ellipse at center, rgba(59, 201, 195, 0.08) 0%, transparent 60%);
+        animation: wave 25s linear infinite reverse;
+        pointer-events: none;
+    }
     
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+    @keyframes wave {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
+    
+    .container {
+        max-width: 980px;
+        margin: 0 auto;
+        background: rgba(255, 255, 255, 0.98);
+        border-radius: 16px;
+        box-shadow: 0 24px 64px rgba(6, 47, 49, 0.4);
+        overflow: hidden;
+        animation: fadeIn 0.6s ease-out;
+        backdrop-filter: blur(10px);
+        position: relative;
+        z-index: 1;
+    }
+    
+    @keyframes fadeIn {
+        from { 
+            opacity: 0; 
+            transform: translateY(30px); 
         }
-        
+        to { 
+            opacity: 1; 
+            transform: translateY(0); 
+        }
+    }
+    
+    .header {
+        background: linear-gradient(135deg, #0E6B6B 0%, #18A89E 50%, #3BC9C3 100%);
+        padding: 50px 40px;
+        text-align: center;
+        color: white;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .header::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url("data:image/svg+xml,%3Csvg width='100' height='100' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3Cpattern id='wave' x='0' y='0' width='100' height='100' patternUnits='userSpaceOnUse'%3E%3Cpath d='M0,50 Q25,30 50,50 T100,50' stroke='rgba(255,255,255,0.1)' stroke-width='2' fill='none'/%3E%3C/pattern%3E%3C/defs%3E%3Crect width='100' height='100' fill='url(%23wave)'/%3E%3C/svg%3E");
+        opacity: 0.3;
+        animation: slide 10s linear infinite;
+    }
+    
+    @keyframes slide {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(100px); }
+    }
+    
+    .header h1 {
+        font-size: 2.8em;
+        margin-bottom: 12px;
+        font-weight: 700;
+        text-shadow: 0 2px 12px rgba(6, 47, 49, 0.2);
+        position: relative;
+        z-index: 1;
+    }
+    
+    .header p {
+        opacity: 0.95;
+        font-size: 1.15em;
+        text-shadow: 0 1px 8px rgba(6, 47, 49, 0.15);
+        position: relative;
+        z-index: 1;
+    }
+    
+    .content {
+        padding: 45px;
+    }
+    
+    /* Markdown Styles */
+    .content h1 {
+        font-size: 2.1em;
+        color: #0A4A4D;
+        border-bottom: 3px solid #7FE8E2;
+        padding-bottom: 0.4em;
+        margin-top: 28px;
+        margin-bottom: 20px;
+        font-weight: 700;
+    }
+    
+    .content h2 {
+        font-size: 1.6em;
+        color: #0E6B6B;
+        border-bottom: 2px solid #B8F5F0;
+        padding-bottom: 0.35em;
+        margin-top: 28px;
+        margin-bottom: 18px;
+        font-weight: 600;
+    }
+    
+    .content h3 {
+        font-size: 1.3em;
+        color: #18A89E;
+        margin-top: 24px;
+        margin-bottom: 16px;
+        font-weight: 600;
+    }
+    
+    .content h4, .content h5, .content h6 {
+        color: #0E6B6B;
+        margin-top: 20px;
+        margin-bottom: 14px;
+        font-weight: 600;
+    }
+    
+    .content p {
+        margin-bottom: 18px;
+        color: #062F31;
+        line-height: 1.7;
+    }
+    
+    .content ul, .content ol {
+        padding-left: 2em;
+        margin-bottom: 18px;
+        color: #062F31;
+    }
+    
+    .content li {
+        margin-bottom: 6px;
+        line-height: 1.6;
+    }
+    
+    .content code {
+        background: linear-gradient(135deg, #B8F5F0 0%, #E5FCFA 100%);
+        padding: 0.25em 0.45em;
+        border-radius: 4px;
+        font-size: 85%;
+        font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+        color: #0A4A4D;
+        border: 1px solid #7FE8E2;
+    }
+    
+    .content pre {
+        background: #062F31;
+        padding: 20px;
+        border-radius: 8px;
+        overflow-x: auto;
+        margin-bottom: 20px;
+        box-shadow: 0 4px 12px rgba(6, 47, 49, 0.15);
+        border: 1px solid #0A4A4D;
+    }
+    
+    .content pre code {
+        background: none;
+        padding: 0;
+        font-size: 100%;
+        color: #7FE8E2;
+        border: none;
+    }
+    
+    .content blockquote {
+        border-left: 5px solid #18A89E;
+        padding-left: 20px;
+        margin-left: 0;
+        margin-bottom: 20px;
+        color: #0E6B6B;
+        font-style: italic;
+        background: linear-gradient(90deg, rgba(127, 232, 226, 0.1) 0%, transparent 100%);
+        padding: 16px 20px;
+        border-radius: 0 8px 8px 0;
+    }
+    
+    .content table {
+        border-collapse: collapse;
+        width: 100%;
+        margin-bottom: 20px;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 2px 8px rgba(6, 47, 49, 0.1);
+    }
+    
+    .content table th,
+    .content table td {
+        border: 1px solid #B8F5F0;
+        padding: 10px 15px;
+    }
+    
+    .content table th {
+        background: linear-gradient(135deg, #18A89E 0%, #3BC9C3 100%);
+        color: white;
+        font-weight: 600;
+        text-align: left;
+    }
+    
+    .content table tr:nth-child(even) {
+        background: rgba(184, 245, 240, 0.2);
+    }
+    
+    .content table tr:hover {
+        background: rgba(127, 232, 226, 0.3);
+        transition: background 0.2s ease;
+    }
+    
+    .content a {
+        color: #18A89E;
+        text-decoration: none;
+        font-weight: 500;
+        transition: all 0.2s ease;
+        border-bottom: 1px solid transparent;
+    }
+    
+    .content a:hover {
+        color: #0E6B6B;
+        border-bottom: 1px solid #18A89E;
+    }
+    
+    .content img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 8px;
+        margin: 20px 0;
+        box-shadow: 0 6px 20px rgba(6, 47, 49, 0.15);
+    }
+    
+    .content hr {
+        border: none;
+        height: 2px;
+        background: linear-gradient(90deg, transparent, #3BC9C3, transparent);
+        margin: 32px 0;
+    }
+    
+    /* Mermaid Diagram Styles */
+    .mermaid {
+        text-align: center;
+        margin: 20px 0;
+        background: rgba(184, 245, 240, 0.1);
+        padding: 20px;
+        border-radius: 8px;
+        border: 1px solid #7FE8E2;
+    }
+    
+    .mermaid svg {
+        max-width: 100%;
+        height: auto;
+    }
+    
+    /* Mermaid Diagram Styles */
+    .mermaid {
+        text-align: center;
+        margin: 20px 0;
+        background: rgba(184, 245, 240, 0.1);
+        padding: 20px;
+        border-radius: 8px;
+        border: 1px solid #7FE8E2;
+    }
+    
+    .mermaid svg {
+        max-width: 100%;
+        height: auto;
+    }
+    
+    /* Loading and Error States */
+    .loading, .error {
+        text-align: center;
+        padding: 80px 20px;
+        color: #0E6B6B;
+    }
+    
+    .loading::after {
+        content: '';
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+        margin-left: 12px;
+        border: 3px solid #3BC9C3;
+        border-radius: 50%;
+        border-top-color: #18A89E;
+        animation: spin 0.8s linear infinite;
+    }
+    
+    @keyframes spin {
+        to { transform: rotate(360deg); }
+    }
+    
+    .error {
+        color: #d73a49;
+        background: rgba(215, 58, 73, 0.1);
+        border-radius: 8px;
+        padding: 40px;
+        margin: 20px;
+    }
+    
+    .footer {
+        text-align: center;
+        padding: 25px;
+        color: #0E6B6B;
+        font-size: 0.9em;
+        border-top: 2px solid #B8F5F0;
+        background: linear-gradient(180deg, transparent 0%, rgba(184, 245, 240, 0.2) 100%);
+    }
+    
+    /* Responsive Design */
+    @media (max-width: 768px) {
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif;
-            line-height: 1.6;
-            color: #062F31;
-            background: linear-gradient(135deg, #0A4A4D 0%, #0E6B6B 25%, #18A89E 75%, #3BC9C3 100%);
-            min-height: 100vh;
-            padding: 20px;
-            position: relative;
-            overflow-x: hidden;
-        }
-        
-        /* Animated wave background */
-        body::before {
-            content: '';
-            position: fixed;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(ellipse at center, rgba(127, 232, 226, 0.1) 0%, transparent 70%);
-            animation: wave 20s linear infinite;
-            pointer-events: none;
-        }
-        
-        body::after {
-            content: '';
-            position: fixed;
-            top: -50%;
-            right: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(ellipse at center, rgba(59, 201, 195, 0.08) 0%, transparent 60%);
-            animation: wave 25s linear infinite reverse;
-            pointer-events: none;
-        }
-        
-        @keyframes wave {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-        
-        .container {
-            max-width: 980px;
-            margin: 0 auto;
-            background: rgba(255, 255, 255, 0.98);
-            border-radius: 16px;
-            box-shadow: 0 24px 64px rgba(6, 47, 49, 0.4);
-            overflow: hidden;
-            animation: fadeIn 0.6s ease-out;
-            backdrop-filter: blur(10px);
-            position: relative;
-            z-index: 1;
-        }
-        
-        @keyframes fadeIn {
-            from { 
-                opacity: 0; 
-                transform: translateY(30px); 
-            }
-            to { 
-                opacity: 1; 
-                transform: translateY(0); 
-            }
+            padding: 12px;
         }
         
         .header {
-            background: linear-gradient(135deg, #0E6B6B 0%, #18A89E 50%, #3BC9C3 100%);
-            padding: 50px 40px;
-            text-align: center;
-            color: white;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .header::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url("data:image/svg+xml,%3Csvg width='100' height='100' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3Cpattern id='wave' x='0' y='0' width='100' height='100' patternUnits='userSpaceOnUse'%3E%3Cpath d='M0,50 Q25,30 50,50 T100,50' stroke='rgba(255,255,255,0.1)' stroke-width='2' fill='none'/%3E%3C/pattern%3E%3C/defs%3E%3Crect width='100' height='100' fill='url(%23wave)'/%3E%3C/svg%3E");
-            opacity: 0.3;
-            animation: slide 10s linear infinite;
-        }
-        
-        @keyframes slide {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(100px); }
+            padding: 35px 25px;
         }
         
         .header h1 {
-            font-size: 2.8em;
-            margin-bottom: 12px;
-            font-weight: 700;
-            text-shadow: 0 2px 12px rgba(6, 47, 49, 0.2);
-            position: relative;
-            z-index: 1;
-        }
-        
-        .header p {
-            opacity: 0.95;
-            font-size: 1.15em;
-            text-shadow: 0 1px 8px rgba(6, 47, 49, 0.15);
-            position: relative;
-            z-index: 1;
+            font-size: 2.2em;
         }
         
         .content {
-            padding: 45px;
+            padding: 25px;
         }
         
-        /* Markdown Styles */
         .content h1 {
-            font-size: 2.1em;
-            color: #0A4A4D;
-            border-bottom: 3px solid #7FE8E2;
-            padding-bottom: 0.4em;
-            margin-top: 28px;
-            margin-bottom: 20px;
-            font-weight: 700;
+            font-size: 1.8em;
         }
         
         .content h2 {
-            font-size: 1.6em;
-            color: #0E6B6B;
-            border-bottom: 2px solid #B8F5F0;
-            padding-bottom: 0.35em;
-            margin-top: 28px;
-            margin-bottom: 18px;
-            font-weight: 600;
+            font-size: 1.4em;
         }
-        
-        .content h3 {
-            font-size: 1.3em;
-            color: #18A89E;
-            margin-top: 24px;
-            margin-bottom: 16px;
-            font-weight: 600;
-        }
-        
-        .content h4, .content h5, .content h6 {
-            color: #0E6B6B;
-            margin-top: 20px;
-            margin-bottom: 14px;
-            font-weight: 600;
-        }
-        
-        .content p {
-            margin-bottom: 18px;
-            color: #062F31;
-            line-height: 1.7;
-        }
-        
-        .content ul, .content ol {
-            padding-left: 2em;
-            margin-bottom: 18px;
-            color: #062F31;
-        }
-        
-        .content li {
-            margin-bottom: 6px;
-            line-height: 1.6;
-        }
-        
-        .content code {
-            background: linear-gradient(135deg, #B8F5F0 0%, #E5FCFA 100%);
-            padding: 0.25em 0.45em;
-            border-radius: 4px;
-            font-size: 85%;
-            font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
-            color: #0A4A4D;
-            border: 1px solid #7FE8E2;
-        }
-        
-        .content pre {
-            background: #062F31;
-            padding: 20px;
-            border-radius: 8px;
-            overflow-x: auto;
-            margin-bottom: 20px;
-            box-shadow: 0 4px 12px rgba(6, 47, 49, 0.15);
-            border: 1px solid #0A4A4D;
-        }
-        
-        .content pre code {
-            background: none;
-            padding: 0;
-            font-size: 100%;
-            color: #7FE8E2;
-            border: none;
-        }
-        
-        .content blockquote {
-            border-left: 5px solid #18A89E;
-            padding-left: 20px;
-            margin-left: 0;
-            margin-bottom: 20px;
-            color: #0E6B6B;
-            font-style: italic;
-            background: linear-gradient(90deg, rgba(127, 232, 226, 0.1) 0%, transparent 100%);
-            padding: 16px 20px;
-            border-radius: 0 8px 8px 0;
-        }
-        
-        .content table {
-            border-collapse: collapse;
-            width: 100%;
-            margin-bottom: 20px;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 2px 8px rgba(6, 47, 49, 0.1);
-        }
-        
-        .content table th,
-        .content table td {
-            border: 1px solid #B8F5F0;
-            padding: 10px 15px;
-        }
-        
-        .content table th {
-            background: linear-gradient(135deg, #18A89E 0%, #3BC9C3 100%);
-            color: white;
-            font-weight: 600;
-            text-align: left;
-        }
-        
-        .content table tr:nth-child(even) {
-            background: rgba(184, 245, 240, 0.2);
-        }
-        
-        .content table tr:hover {
-            background: rgba(127, 232, 226, 0.3);
-            transition: background 0.2s ease;
-        }
-        
-        .content a {
-            color: #18A89E;
-            text-decoration: none;
-            font-weight: 500;
-            transition: all 0.2s ease;
-            border-bottom: 1px solid transparent;
-        }
-        
-        .content a:hover {
-            color: #0E6B6B;
-            border-bottom: 1px solid #18A89E;
-        }
-        
-        .content img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 8px;
-            margin: 20px 0;
-            box-shadow: 0 6px 20px rgba(6, 47, 49, 0.15);
-        }
-        
-        .content hr {
-            border: none;
-            height: 2px;
-            background: linear-gradient(90deg, transparent, #3BC9C3, transparent);
-            margin: 32px 0;
-        }
-        
-        /* Mermaid Diagram Styles */
-        .mermaid {
-            text-align: center;
-            margin: 20px 0;
-            background: rgba(184, 245, 240, 0.1);
-            padding: 20px;
-            border-radius: 8px;
-            border: 1px solid #7FE8E2;
-        }
-        
-        .mermaid svg {
-            max-width: 100%;
-            height: auto;
-        }
-        
-        /* Mermaid Diagram Styles */
-        .mermaid {
-            text-align: center;
-            margin: 20px 0;
-            background: rgba(184, 245, 240, 0.1);
-            padding: 20px;
-            border-radius: 8px;
-            border: 1px solid #7FE8E2;
-        }
-        
-        .mermaid svg {
-            max-width: 100%;
-            height: auto;
-        }
-        
-        /* Loading and Error States */
-        .loading, .error {
-            text-align: center;
-            padding: 80px 20px;
-            color: #0E6B6B;
-        }
-        
-        .loading::after {
-            content: '';
-            display: inline-block;
-            width: 24px;
-            height: 24px;
-            margin-left: 12px;
-            border: 3px solid #3BC9C3;
-            border-radius: 50%;
-            border-top-color: #18A89E;
-            animation: spin 0.8s linear infinite;
-        }
-        
-        @keyframes spin {
-            to { transform: rotate(360deg); }
-        }
-        
-        .error {
-            color: #d73a49;
-            background: rgba(215, 58, 73, 0.1);
-            border-radius: 8px;
-            padding: 40px;
-            margin: 20px;
-        }
-        
-        .footer {
-            text-align: center;
-            padding: 25px;
-            color: #0E6B6B;
-            font-size: 0.9em;
-            border-top: 2px solid #B8F5F0;
-            background: linear-gradient(180deg, transparent 0%, rgba(184, 245, 240, 0.2) 100%);
-        }
-        
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            body {
-                padding: 12px;
-            }
-            
-            .header {
-                padding: 35px 25px;
-            }
-            
-            .header h1 {
-                font-size: 2.2em;
-            }
-            
-            .content {
-                padding: 25px;
-            }
-            
-            .content h1 {
-                font-size: 1.8em;
-            }
-            
-            .content h2 {
-                font-size: 1.4em;
-            }
-        }
-        
-        /* Additional enhancements */
-        ::selection {
-            background: #3BC9C3;
-            color: white;
-        }
-        
-        ::-webkit-scrollbar {
-            width: 10px;
-            height: 10px;
-        }
-        
-        ::-webkit-scrollbar-track {
-            background: #B8F5F0;
-        }
-        
-        ::-webkit-scrollbar-thumb {
-            background: linear-gradient(180deg, #18A89E 0%, #3BC9C3 100%);
-            border-radius: 5px;
-        }
-        
-        ::-webkit-scrollbar-thumb:hover {
-            background: linear-gradient(180deg, #0E6B6B 0%, #18A89E 100%);
-        }
-    </style>
+    }
+    
+    /* Additional enhancements */
+    ::selection {
+        background: #3BC9C3;
+        color: white;
+    }
+    
+    ::-webkit-scrollbar {
+        width: 10px;
+        height: 10px;
+    }
+    
+    ::-webkit-scrollbar-track {
+        background: #B8F5F0;
+    }
+    
+    ::-webkit-scrollbar-thumb {
+        background: linear-gradient(180deg, #18A89E 0%, #3BC9C3 100%);
+        border-radius: 5px;
+    }
+    
+    ::-webkit-scrollbar-thumb:hover {
+        background: linear-gradient(180deg, #0E6B6B 0%, #18A89E 100%);
+    }
+</style>
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-            <h1 id="page-title">Documentation</h1>
-            <p id="page-description">Loading README...</p>
-        </div>
-        
-        <div class="content" id="content">
-            <div class="loading">Loading documentation</div>
-        </div>
-        
-        <div class="footer">
-            <p>Powered by GitHub Pages</p>
-        </div>
+<div class="container">
+    <div class="header">
+        <h1 id="page-title">Documentation</h1>
+        <p id="page-description">Loading README...</p>
     </div>
     
-    <script>
-        // Initialize Mermaid
-        mermaid.initialize({ 
-            startOnLoad: false,
-            theme: 'default',
-            themeVariables: {
-                primaryColor: '#18A89E',
-                primaryTextColor: '#062F31',
-                primaryBorderColor: '#0E6B6B',
-                lineColor: '#3BC9C3',
-                secondaryColor: '#7FE8E2',
-                tertiaryColor: '#B8F5F0',
-                background: '#ffffff',
-                mainBkg: '#18A89E',
-                secondBkg: '#7FE8E2',
-                tertiaryBkg: '#B8F5F0',
-                textColor: '#062F31',
-                fontSize: '16px'
+    <div class="content" id="content">
+        <div class="loading">Loading documentation</div>
+    </div>
+    
+    <div class="footer">
+        <p>Powered by GitHub Pages</p>
+    </div>
+</div>
+
+<script>
+    // Initialize Mermaid
+    mermaid.initialize({ 
+        startOnLoad: false,
+        theme: 'default',
+        themeVariables: {
+            primaryColor: '#18A89E',
+            primaryTextColor: '#062F31',
+            primaryBorderColor: '#0E6B6B',
+            lineColor: '#3BC9C3',
+            secondaryColor: '#7FE8E2',
+            tertiaryColor: '#B8F5F0',
+            background: '#ffffff',
+            mainBkg: '#18A89E',
+            secondBkg: '#7FE8E2',
+            tertiaryBkg: '#B8F5F0',
+            textColor: '#062F31',
+            fontSize: '16px'
+        }
+    });
+    
+    // Configure marked options
+    marked.setOptions({
+        highlight: function(code, lang) {
+            if (lang === 'mermaid') {
+                return '<div class="mermaid">' + code + '</div>';
             }
-        });
+            if (Prism.languages[lang]) {
+                return Prism.highlight(code, Prism.languages[lang], lang);
+            }
+            return code;
+        },
+        breaks: true,
+        gfm: true
+    });
+    
+    // Function to extract title from markdown
+    function extractTitle(markdown) {
+        const match = markdown.match(/^#\s+(.+)$/m);
+        return match ? match[1] : 'Documentation';
+    }
+    
+    // Function to extract description (first paragraph after title)
+    function extractDescription(markdown) {
+        const lines = markdown.split('\n');
+        let foundTitle = false;
+        let description = '';
         
-        // Configure marked options
-        marked.setOptions({
-            highlight: function(code, lang) {
-                if (lang === 'mermaid') {
-                    return '<div class="mermaid">' + code + '</div>';
-                }
-                if (Prism.languages[lang]) {
-                    return Prism.highlight(code, Prism.languages[lang], lang);
-                }
-                return code;
-            },
-            breaks: true,
-            gfm: true
-        });
-        
-        // Function to extract title from markdown
-        function extractTitle(markdown) {
-            return "HyperSplit Documentation";
+        for (let line of lines) {
+            if (line.startsWith('#')) {
+                foundTitle = true;
+                continue;
+            }
+            if (foundTitle && line.trim() && !line.startsWith('#')) {
+                description = line.trim();
+                break;
+            }
         }
         
-        // Function to extract description (first paragraph after title)
-        function extractDescription(markdown) {
-            return "HyperSplit is a bill splitting app on crypto rails that enables instant settlement. No more chasing friends for money or waiting for bank transfers - split & settle immediately.";
-        }
+        return description || 'Project documentation and information';
+    }
+    
+    // Fetch and render README
+    async function loadReadme() {
+        const contentEl = document.getElementById('content');
+        const titleEl = document.getElementById('page-title');
+        const descEl = document.getElementById('page-description');
         
-        // Fetch and render README
-        async function loadReadme() {
-            const contentEl = document.getElementById('content');
-            const titleEl = document.getElementById('page-title');
-            const descEl = document.getElementById('page-description');
+        try {
+            // Try to fetch README.md first, then README.MD, then readme.md
+            let response;
+            const readmeVariants = ['README.md', 'README.MD', 'readme.md', 'Readme.md'];
             
-            try {
-                // Try to fetch README.md first, then README.MD, then readme.md
-                let response;
-                const readmeVariants = ['README.md', 'README.MD', 'readme.md', 'Readme.md'];
-                
-                for (const variant of readmeVariants) {
-                    response = await fetch(variant);
-                    if (response.ok) break;
-                }
-                
-                if (!response.ok) {
-                    throw new Error('README file not found');
-                }
-                
-                const markdown = await response.text();
-                
-                // Extract and set title and description
-                const title = extractTitle(markdown);
-                const description = extractDescription(markdown);
-                
-                titleEl.textContent = title;
-                descEl.textContent = description;
-                document.title = title;
-                
-                // Render markdown
-                const html = marked.parse(markdown);
-                contentEl.innerHTML = html;
-                
-                // Re-highlight code blocks
-                Prism.highlightAll();
-                
-                // Render Mermaid diagrams
-                try {
-                    mermaid.run({
-                        querySelector: '.mermaid'
-                    });
-                } catch (e) {
-                    console.log('Mermaid rendering error:', e);
-                }
-                
-                // Make external links open in new tab
-                contentEl.querySelectorAll('a').forEach(link => {
-                    if (link.href && !link.href.startsWith(window.location.origin)) {
-                        link.target = '_blank';
-                        link.rel = 'noopener noreferrer';
+            for (const variant of readmeVariants) {
+                response = await fetch(variant);
+                if (response.ok) break;
+            }
+            
+            if (!response.ok) {
+                throw new Error('README file not found');
+            }
+            
+            const markdown = await response.text();
+            
+            // Extract and set title and description
+            const title = extractTitle(markdown);
+            const description = extractDescription(markdown);
+            
+            titleEl.textContent = title;
+            descEl.textContent = description;
+            document.title = title;
+            
+            // Render markdown
+            const html = marked.parse(markdown);
+            contentEl.innerHTML = html;
+            
+            // Re-highlight code blocks
+            Prism.highlightAll();
+            
+            // Process Mermaid diagrams
+            // First, check if marked created .mermaid divs
+            let mermaidElements = contentEl.querySelectorAll('.mermaid');
+            console.log('Initial mermaid elements found:', mermaidElements.length);
+            
+            // If no .mermaid divs found, look for code blocks that might be mermaid
+            if (mermaidElements.length === 0) {
+                const codeBlocks = contentEl.querySelectorAll('pre code');
+                codeBlocks.forEach(block => {
+                    const text = block.textContent.trim();
+                    // Check if this looks like a mermaid diagram
+                    if (text.startsWith('sequenceDiagram') || 
+                        text.startsWith('graph') || 
+                        text.startsWith('flowchart') ||
+                        text.startsWith('pie') ||
+                        text.startsWith('gantt') ||
+                        text.startsWith('classDiagram') ||
+                        text.startsWith('stateDiagram') ||
+                        text.startsWith('erDiagram') ||
+                        text.startsWith('journey') ||
+                        text.startsWith('gitGraph')) {
+                        
+                        console.log('Found potential mermaid diagram:', text.substring(0, 50) + '...');
+                        
+                        // Create a mermaid div
+                        const mermaidDiv = document.createElement('div');
+                        mermaidDiv.className = 'mermaid';
+                        mermaidDiv.textContent = text;
+                        
+                        // Replace the code block with the mermaid div
+                        const pre = block.parentElement;
+                        pre.parentElement.replaceChild(mermaidDiv, pre);
                     }
                 });
                 
-            } catch (error) {
-                contentEl.innerHTML = `
-                    <div class="error">
-                        <h2>⚠️ Could not load README</h2>
-                        <p>Please ensure you have a README.md file in your repository.</p>
-                        <p style="font-size: 0.9em; margin-top: 10px;">Error: ${error.message}</p>
-                    </div>
-                `;
-                titleEl.textContent = 'Documentation';
-                descEl.textContent = 'README file not found';
+                // Check again for mermaid elements
+                mermaidElements = contentEl.querySelectorAll('.mermaid');
+                console.log('Mermaid elements after processing:', mermaidElements.length);
             }
+            
+            // Render Mermaid diagrams if any found
+            if (mermaidElements.length > 0) {
+                setTimeout(() => {
+                    try {
+                        console.log('Attempting to render', mermaidElements.length, 'mermaid diagrams');
+                        mermaid.run({
+                            querySelector: '.mermaid'
+                        });
+                        console.log('Mermaid rendering completed');
+                    } catch (e) {
+                        console.error('Mermaid rendering error:', e);
+                        // Try to render each diagram individually
+                        mermaidElements.forEach((element, index) => {
+                            try {
+                                mermaid.run({
+                                    nodes: [element]
+                                });
+                                console.log(`Diagram ${index + 1} rendered successfully`);
+                            } catch (err) {
+                                console.error(`Failed to render diagram ${index + 1}:`, err);
+                                console.log('Diagram content:', element.textContent.substring(0, 100));
+                            }
+                        });
+                    }
+                }, 100); // Small delay to ensure DOM is ready
+            }
+            
+            // Make external links open in new tab
+            contentEl.querySelectorAll('a').forEach(link => {
+                if (link.href && !link.href.startsWith(window.location.origin)) {
+                    link.target = '_blank';
+                    link.rel = 'noopener noreferrer';
+                }
+            });
+            
+        } catch (error) {
+            contentEl.innerHTML = `
+                <div class="error">
+                    <h2>⚠️ Could not load README</h2>
+                    <p>Please ensure you have a README.md file in your repository.</p>
+                    <p style="font-size: 0.9em; margin-top: 10px;">Error: ${error.message}</p>
+                </div>
+            `;
+            titleEl.textContent = 'Documentation';
+            descEl.textContent = 'README file not found';
         }
-        
-        // Load README when page loads
-        loadReadme();
-    </script>
+    }
+    
+    // Load README when page loads
+    loadReadme();
+</script>
 </body>
 </html>
