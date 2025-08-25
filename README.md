@@ -20,116 +20,6 @@ Key capabilities:
 - Hyperliquid Names: search, purchase, and assign to a Privy account
 - RPC connectivity powered by Alchemy
 
-## Getting Started
-
-### Prerequisites
-
-- Go 1.23+
-- Docker and Docker Compose (for local Postgres)
-- make (optional, recommended)
-
-### 1) Start Postgres locally (Docker)
-
-Run Postgres using the provided compose file:
-
-```bash
-docker compose -f docker-compose.yml up -d postgres
-# or, using Makefile helper
-make dc-upd-postgres
-```
-
-Default credentials (from docker-compose):
-
-- DB: hsplit_test
-- User: admin
-- Password: password
-- Port: 5432
-
-### 2) Configure environment
-
-Create a .env file in the repository root. Minimum local config:
-
-```bash
-PORT=8080
-
-# Database (match docker-compose values)
-HSPLIT_DATABASE_HOST=localhost
-HSPLIT_DATABASE_PORT=5432
-HSPLIT_DATABASE_DATABASE=hsplit_test
-HSPLIT_DATABASE_USERNAME=admin
-HSPLIT_DATABASE_PASSWORD=password
-HSPLIT_DATABASE_SSL_MODE=disable
-HSPLIT_DATABASE_USE_POOLER=false
-
-# Auth
-HSPLIT_AUTH_PRIVY_APP_ID=your-privy-app-id
-
-# Providers (optional but recommended for full functionality)
-HSPLIT_PROVIDERS_LIFI_API_KEY=your-lifi-api-key
-HSPLIT_PROVIDERS_ALCHEMY_API_KEY=your-alchemy-api-key
-HSPLIT_PROVIDERS_HLNAMES_API_KEY=your-hlnames-api-key
-# Usually fine to leave default, but overridable if needed
-HSPLIT_PROVIDERS_HLNAMES_BASE_URL=https://api.hlnames.xyz
-```
-
-Notes:
-
-- All configuration can be set via environment variables with the `HSPLIT_` prefix.
-- See `internal/config/config.go` for full structure and defaults.
-- EVM RPCs default to Alchemy endpoints; provide `HSPLIT_PROVIDERS_ALCHEMY_API_KEY` to use your key.
-
-### 3) Install deps and run migrations
-
-```bash
-make deps
-make db-migrate
-```
-
-If you prefer model-based table creation for a fresh DB instead of SQL migrations, you can run:
-
-```bash
-make db-create
-```
-
-### 4) Run the API
-
-```bash
-make run
-# or
-go run ./cmd/hsplit-service
-```
-
-The service listens on `:${PORT}` (default 8080).
-
-### 5) Health check
-
-```bash
-curl -s http://localhost:${PORT:-8080}/health | jq
-```
-
-### 6) Run tests
-
-```bash
-make test
-```
-
-## iOS App (Quick Start)
-
-Requirements:
-
-- Xcode 15+
-- iOS 17+ simulator or device
-
-Steps:
-
-1. Start the backend locally (see Getting Started above).
-2. Update the mobile app backend URL:
-   - Edit `mobile/HyperSplit/Utils/Constants.swift` → `Constants.API.baseURL`
-   - Simulator: `http://127.0.0.1:8080`
-   - Physical device: use your Mac's LAN IP, e.g. `http://192.168.x.y:8080`, and ensure both are on the same network
-3. Ensure backend `HSPLIT_AUTH_PRIVY_APP_ID` matches `Constants.API.privyAppId` in the app.
-4. Open `mobile/HyperSplit.xcodeproj` in Xcode, select the `HyperSplit` scheme, set your Signing Team if needed, and Run.
-
 ## Architecture
 
 The app helps groups split expenses by using bills. Each bill can have several items, and users can decide who pays for what. Tax and tip are shared across the items.
@@ -253,3 +143,114 @@ authenticated Privy user.
 
 To authenticate and authorize requests to the BE, the frontend will include a Privy JWT identity token in the request. The BE will then use those
 tokens against a privy REST API for getting the user's information, such as phone number and external ID. (Docs: https://docs.privy.io/user-management/users/identity-tokens)
+
+## Getting Started
+
+### Prerequisites
+
+- Go 1.23+
+- Docker and Docker Compose (for local Postgres)
+- make (optional, recommended)
+
+### 1) Start Postgres locally (Docker)
+
+Run Postgres using the provided compose file:
+
+```bash
+docker compose -f docker-compose.yml up -d postgres
+# or, using Makefile helper
+make dc-upd-postgres
+```
+
+Default credentials (from docker-compose):
+
+- DB: hsplit_test
+- User: admin
+- Password: password
+- Port: 5432
+
+### 2) Configure environment
+
+Create a .env file in the repository root. Minimum local config:
+
+```bash
+PORT=8080
+
+# Database (match docker-compose values)
+HSPLIT_DATABASE_HOST=localhost
+HSPLIT_DATABASE_PORT=5432
+HSPLIT_DATABASE_DATABASE=hsplit_test
+HSPLIT_DATABASE_USERNAME=admin
+HSPLIT_DATABASE_PASSWORD=password
+HSPLIT_DATABASE_SSL_MODE=disable
+HSPLIT_DATABASE_USE_POOLER=false
+
+# Auth
+HSPLIT_AUTH_PRIVY_APP_ID=your-privy-app-id
+
+# Providers (optional but recommended for full functionality)
+HSPLIT_PROVIDERS_LIFI_API_KEY=your-lifi-api-key
+HSPLIT_PROVIDERS_ALCHEMY_API_KEY=your-alchemy-api-key
+HSPLIT_PROVIDERS_HLNAMES_API_KEY=your-hlnames-api-key
+# Usually fine to leave default, but overridable if needed
+HSPLIT_PROVIDERS_HLNAMES_BASE_URL=https://api.hlnames.xyz
+```
+
+Notes:
+
+- All configuration can be set via environment variables with the `HSPLIT_` prefix.
+- See `internal/config/config.go` for full structure and defaults.
+- EVM RPCs default to Alchemy endpoints; provide `HSPLIT_PROVIDERS_ALCHEMY_API_KEY` to use your key.
+
+### 3) Install deps and run migrations
+
+```bash
+make deps
+make db-migrate
+```
+
+If you prefer model-based table creation for a fresh DB instead of SQL migrations, you can run:
+
+```bash
+make db-create
+```
+
+### 4) Run the API
+
+```bash
+make run
+# or
+go run ./cmd/hsplit-service
+```
+
+The service listens on `:${PORT}` (default 8080).
+
+### 5) Health check
+
+```bash
+curl -s http://localhost:${PORT:-8080}/health | jq
+```
+
+### 6) Run tests
+
+```bash
+make test
+```
+
+## iOS App (Quick Start)
+
+Requirements:
+
+- Xcode 15+
+- iOS 17+ simulator or device
+
+Steps:
+
+1. Start the backend locally (see Getting Started above).
+2. Update the mobile app backend URL:
+   - Edit `mobile/HyperSplit/Utils/Constants.swift` → `Constants.API.baseURL`
+   - Simulator: `http://127.0.0.1:8080`
+   - Physical device: use your Mac's LAN IP, e.g. `http://192.168.x.y:8080`, and ensure both are on the same network
+3. Ensure backend `HSPLIT_AUTH_PRIVY_APP_ID` matches `Constants.API.privyAppId` in the app.
+4. Open `mobile/HyperSplit.xcodeproj` in Xcode, select the `HyperSplit` scheme, set your Signing Team if needed, and Run.
+
