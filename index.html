@@ -438,22 +438,7 @@
         
         // Function to extract description (first paragraph after title)
         function extractDescription(markdown) {
-            const lines = markdown.split('\n');
-            let foundTitle = false;
-            let description = '';
-            
-            for (let line of lines) {
-                if (line.startsWith('#')) {
-                    foundTitle = true;
-                    continue;
-                }
-                if (foundTitle && line.trim() && !line.startsWith('#')) {
-                    description = line.trim();
-                    break;
-                }
-            }
-            
-            return description || 'Project documentation and information';
+            "HyperSplit is a bill splitting app on crypto rails that enables instant settlement. No more chasing friends for money or waiting for bank transfers - split & settle immediately."
         }
         
         // Fetch and render README
