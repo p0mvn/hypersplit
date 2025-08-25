@@ -429,11 +429,6 @@
 </head>
 <body>
 <div class="container">
-    <div class="header">
-        <h1 id="page-title">Documentation</h1>
-        <p id="page-description">Loading README...</p>
-    </div>
-    
     <div class="content" id="content">
         <div class="loading">Loading documentation</div>
     </div>
@@ -530,9 +525,9 @@
             const title = extractTitle(markdown);
             const description = extractDescription(markdown);
             
-            titleEl.textContent = title;
-            descEl.textContent = description;
-            document.title = title;
+            if (titleEl) titleEl.textContent = title;
+            if (descEl) descEl.textContent = description;
+            document.title = title || document.title;
             
             // Render markdown
             const html = marked.parse(markdown);
@@ -624,8 +619,8 @@
                     <p style="font-size: 0.9em; margin-top: 10px;">Error: ${error.message}</p>
                 </div>
             `;
-            titleEl.textContent = 'Documentation';
-            descEl.textContent = 'README file not found';
+            if (titleEl) titleEl.textContent = 'Documentation';
+            if (descEl) descEl.textContent = 'README file not found';
         }
     }
     
