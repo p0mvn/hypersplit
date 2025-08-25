@@ -8,6 +8,8 @@
 
 ## Overview
 
+HyperSplit is a bill splitting mobile app built on crypto rails that enables instant settlement. No more chasing friends for money or waiting for bank transfers - split & settle immediately.
+
 HyperSplit lets friends split expenses with crypto-native settlement. It models each bill as a subgraph in a global debt graph, supports collaborative editing and confirmations, and executes on-chain payments. Users authenticate with Privy (SMS OTP → embedded wallet), can on-ramp from Base (ETH) to Hyperliquid (USDT) via LiFi, and settle debts on Hyperliquid. Hyperliquid Names are used for human‑readable identities; users can purchase a name and assign it to their Privy account. All chain RPC calls are performed via Alchemy.
 
 Key capabilities:
