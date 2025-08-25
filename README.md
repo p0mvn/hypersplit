@@ -167,6 +167,67 @@ There is an endpoint to mark a user as “ready” for a bill. A bill can only b
 
 ## On-Off Ramp
 
+```mermaid
+sequenceDiagram
+    participant User
+    participant Mobile as Mobile App
+    participant Backend
+    participant SM as State Machine
+    participant LiFi
+    participant Base as Base Chain
+    participant Hyper as HyperEVM
+
+    %% Initialization
+    User->>Mobile: Open Deposit View
+    Mobile->>Backend: POST /select-chain (Base)
+    Backend->>SM: Initialize (WaitFunding)
+    Backend-->>Mobile: Deposit address
+    Mobile-->>User: Show deposit address
+
+    %% Deposit Detection
+    User->>Base: Send ETH to address
+    
+    loop Monitor Balance (10 min)
+        SM->>Base: Check balance
+        Base-->>SM: Current balance
+    end
+    
+    Note over SM: Deposit detected
+    SM->>SM: → CreateRouteMsg
+
+    %% Route Creation
+    SM->>LiFi: Request swap route<br/>(ETH → USDT)
+    LiFi-->>SM: Swap message
+    SM->>Backend: Save swap message
+    
+    %% Mobile Polling & Execution
+    Mobile->>Backend: GET /pending-swap
+    Backend-->>Mobile: Unsigned swap message
+    Mobile-->>User: Show "Execute Swap"
+    
+    User->>Mobile: Execute & Sign
+    Mobile->>Backend: POST /execute-swap
+    Backend->>SM: → Route
+    
+    %% Swap Processing
+    SM->>LiFi: Submit signed swap
+    LiFi->>Base: Execute swap
+    Base->>Hyper: Bridge to HyperEVM
+    Hyper-->>Hyper: Convert to USDT
+    
+    SM->>SM: → Funded
+    Mobile->>Backend: GET /balance
+    Backend-->>Mobile: Updated USDT balance
+    Mobile-->>User: Success ✓
+
+    %% Error Path
+    alt Error Occurs
+        SM->>SM: → Error
+        SM-->>Mobile: Error notification
+        Note over Backend: Manual intervention
+    end
+```
+
 The app currently allows users to on-ramp from ETH on the Base network to USDT on Hyperliquid, using LiFi as the routing provider.
 
 In the future, we plan to expand support so users can on-ramp from any blockchain and any token to USDT on Hyperliquid.
