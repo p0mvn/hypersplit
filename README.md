@@ -22,6 +22,12 @@ Key capabilities:
 - Hyperliquid Names: search, purchase, and assign to a Privy account
 - RPC connectivity powered by Alchemy
 
+## Technical Stack
+
+The backend is built with Go using the Gin framework for HTTP routing and middleware. Data persistence uses PostgreSQL hosted on Supabase with the Bun ORM for type-safe database operations. The architecture follows a clean layered approach with separated API, business logic, and data access layers, using a singleton store pattern for centralized database access.
+
+For blockchain settlement, the system integrates with Hyper EVM where users execute final settlements. The on/off ramp system enables users to bridge assets from supported blockchains (currently Base/ETH) to USDT on Hyperliquid using LiFi as the routing provider. The backend monitors wallet balances, generates swap transactions, and manages the entire deposit flow through a state machine architecture.
+
 ## Architecture
 
 The app helps groups split expenses by using bills. Each bill can have several items, and users decide who pays for what. Tax and tip are shared across the items.
