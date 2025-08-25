@@ -157,6 +157,23 @@ If you are not a judge but would like to see the code or get access to the app, 
 - [X](https://x.com/akhtariev)
 - Telegram: `@rakhtariev`
 
+## Future Enhancements
+
+- **Gas abstraction**
+  - Building a gas manager and a fee contract. In the background, LiFi would first deposit into a contract that would:
+    - Subtract taker fee
+    - Split the funds into a small amount for gas + USDT. As an alternative design for handling gas funds, we are evaluating:
+      - Using LiFuel
+      - Pre-funding gas for the users
+    - In both cases, ensuring solvency through taker fees.
+- **Enhance on-ramp**
+  - Support any token on any chain supported by LiFi
+  - Apple Pay on-ramp through Coinbase
+- **Photo-centric Bill creation UX**
+  - Take a photo of the receipt and automatically extract the items and their prices through LLMs.
+- **Multi-currency support**
+  - Continue settling in USDT on Hyperliquid but display amounts in other currencies (EUR, GBP, etc.)
+
 ## Live Deployment
 
 If you'd like to test the live backend while building the mobile app, you can integrate against the live backend:
