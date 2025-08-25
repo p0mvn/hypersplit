@@ -254,3 +254,11 @@ Steps:
 3. Ensure backend `HSPLIT_AUTH_PRIVY_APP_ID` matches `Constants.API.privyAppId` in the app.
 4. Open `mobile/HyperSplit.xcodeproj` in Xcode, select the `HyperSplit` scheme, set your Signing Team if needed, and Run.
 
+## Live Deployment
+
+If you'd like to test the live backend while building the mobile app, you can integrate against the live backend:
+
+```bash
+curl https://hsplit-be-production.up.railway.app/health
+{"database":true,"service":"hsplit-service","status":"healthy","timestamp":"2025-08-25T01:07:13.235774719Z","version":"1.0.0"}%
+```
